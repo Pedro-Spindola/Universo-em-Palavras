@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--color-principal);
+}
+:root{
+    --color-principal: #2C3035;
+    --color-luz: #3b3f44;
+    --color-sombra: #1b1e22;
+    --color-text:  #F2F2F2;
+    /*
+    --c1: #F2F2F2;
+    --c2: #FDE8E3;
+    --c3: #EDE8E6;
+    --c4: #F0EFEA;
+    */
+}
+body{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container
+{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    flex-wrap: wrap;
+}
+.box-perfil{
+    position: fixed;
+    width: 20%;
+    height: 100vh;
+    display: flex;
+}
+.box-perfil .container{
+    border-radius: 10px;
+    background: var(--color-principal);
+    box-shadow:  4px 4px 6px var(--color-sombra),
+                -4px -4px 6px var(--color-luz);
+}
+main{
+    width: 60%;
+    height: 100%;
+    margin-left: 20%;
+    display: flex;
+    justify-content: center;
+}
+.mainClass{
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    height: 1000px;
+    border-radius: 10px;
+    background: var(--color-principal);
+    box-shadow:  4px 4px 6px var(--color-sombra),
+                -4px -4px 6px var(--color-luz);
+}
+.dash{
+    position: fixed;
+    width: 20%;
+    height: 100vh;
+    display: flex;
+    margin-left: 80%;
+}
+.dash .container{
+    border-radius: 10px;
+    background: var(--color-principal);
+    box-shadow:  4px 4px 6px var(--color-sombra),
+                -4px -4px 6px var(--color-luz);
+}
+.livrosAndamentos,
+.livrosConcluido,
+.livrosDesejados{
+    min-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.tituloBox{
+    display: flex;
+    padding: 4px 10px;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    border-radius: 4px;
+    background: var(--color-principal);
+    box-shadow: inset 2px 2px 1px var(--color-sombra),
+                inset -2px -2px 1px var(--color-luz);
+}
+.tituloBox h2{
+    background-color: transparent;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--color-text);
+}
+.btnAddNewBook h2{
+    color: var(--color-text);
+    text-align: center;
+    align-content: center;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    border-radius: 4px;
+    border-radius: 4px;
+    background: var(--color-principal);
+    box-shadow:  2px 2px 1px var(--color-sombra),
+                -2px -2px 1px var(--color-luz);
+}
+.boxListLivros{
+    width: 100%;
+    height: 40px;
+    background-color: rebeccapurple;
+}
