@@ -16,58 +16,110 @@
 </head>
 <body>
     <aside class="box-perfil">
+        <label class="switch">
+            <input class="checkbox" type="checkbox" />
+            <span class="slider round"></span>
+          </label>
         <section class="container">
             <div class="perfil">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <img src="" alt="">
+                <img id="fotoPerfil" src="image/fotoPerfil.png" alt="">
             </div><!--perfil-->
             <div class="informacaoPessoal">
-                <h2 id="nomeUsuario"></h2>
-                <h3 id="bioUsuario"></h3>
-                <h3 id="autorFavorito"></h3>
-                <h3 id="generoFavorito"></h3>
+                <h1 id="nomeUsuario">Caramelo</h1>
+                <h2 id="bioUsuario">Nullam pretium sagittis facilisis. Integer tincidunt massa tellus, non mattis eros elementum ut. Proin ut tellus porta, lobortis purus a, vehicula odio. Mauris sed felis sed odio gravida tempor.</h2>
+                <label for="">Autor Favorito: </label>
+                <h3 id="autorFavorito">Ronaldo C.</h3>
+                <label for="">Gênero Favorito: </label>
+                <h3 id="generoFavorito">Ficção Cientifica</h3>
             </div><!--informacaoPessoal-->
             <div class="dadosLeitura">
                 <div class="livrosTerminados boxDados">
-                    <img src="" alt="">
-                    <h2></h2>
+                    <img src="image/codificacao.png">
+                    <h2>Livros Terminados</h2>
+                    <h3>100</h3>
                 </div>
                 <div class="paginasLidas boxDados">
-                    <img src="" alt="">
-                    <h2></h2>
+                    <img src="image/codificacao.png">
+                    <h2>Páginas Lidas</h2>
+                    <h3>8486</h3>
                 </div>
             </div><!--dadosLeitura-->
+            <div class="footer">
+                <div class="direitos">
+                    <h2>© DEV.SPINDOLA 2022 - 2024</h2>
+                </div>
+            </div>
         </section><!--container-->
     </aside><!--box-perfil-->
     <main>
         <section class="mainClass">
             <div class="livrosAndamentos">
                 <div class="tituloBox">
-                    <h2>Livros em Andamento</h2>
+                    <h2>SEUS LIVROS</h2>
                 </div><!--tituloBox-->
                 <div class="boxListLivros">
-                    <div class="listLivros listLivrosAndamentos">
-                    
-                    </div>
-                </div>
-            </div>
-            <div class="livrosConcluido">
-                <div class="tituloBox">
+                    <div class="listLivros">
+                        <div class="livroLine">
+                            <div class="divImg">
+                                <img id="lLimgLivro"  class="lLimgLivro" src="codificacao.png" alt="">
+                            </div>
+                            <div class="dados">
+                                <h2 id="lLnomeDoLivro" class="lLnomeDoLivro">Código Limpo</h2>
+                                <h2 id="lLgeneroDoLivro" class="lLgeneroDoLivro">Programação</h2>
+                                <h2 id="lLautorDoLivro" class="lLautorDoLivro">Robert C. Martin</h2>
+                                <h2 id="lLpaginas" class="lLpaginas" >258 pag.</h2>
+                                <h2 id="lLISBN" class="lLISBN">ISBN: 978-8576082675</h2>
+                                <h2 id="lLNotaDoLivro" class="lLNotaDoLivro" >10.0</h2>
+                            </div>
+                            <div class="ferramentas">
+                                <div class="divImg">
+                                    <img id="lLimgEstrela"  class="lLimgEstrela" src="image/estrela.svg" alt="">
+                                </div>
+                                <div class="DetalhesLivro divImg">
+                                    <img class="imageEdit" src="image/setas.svg" alt="">
+                                </div>
+                                <div class="editarLivro divImg">
+                                    <img class="imageEdit" src="image/editar.svg" alt="">
+                                </div>
+                            </div>
+                        </div><!--livroLine-->
+                        <div class="dadosDoLivro">
+                            <h2 id="lLdescricao" class="lLdescricao">Nullam pretium sagittis facilisis. Integer tincidunt massa tellus, non mattis eros elementum ut. Proin ut tellus porta, lobortis purus a, vehicula odio. Mauris sed felis sed odio gravida tempor. Nullam pretium sagittis facilisis. Integer tincidunt massa tellus, non mattis eros elementum ut. Proin ut tellus porta, lobortis purus a, vehicula odio. Mauris sed felis sed odio gravida tempor.</h2>
+                        </div><!--DadosDoLivro-->
+                    </div><!--listLivros-->
 
-                </div><!--tituloBox-->
-            </div>
-            <div class="livrosDesejados">
-                <div class="tituloBox">
-
-                </div><!--tituloBox-->
+                    <div class="listLivros">
+                        <div class="livroLine">
+                            <div class="divImg">
+                                <img id="lLimgLivro"  class="lLimgLivro" src="codificacao.png" alt="">
+                            </div>
+                            <div class="dados">
+                                <h2 id="lLnomeDoLivro" class="lLnomeDoLivro">Narnia</h2>
+                                <h2 id="lLgeneroDoLivro" class="lLgeneroDoLivro">Ficticio</h2>
+                                <h2 id="lLautorDoLivro" class="lLautorDoLivro">Martin w.</h2>
+                                <h2 id="lLpaginas" class="lLpaginas" >118 pag.</h2>
+                                <h2 id="lLISBN" class="lLISBN">ISBN: 978-8576082675</h2>
+                                <h2 id="lLNotaDoLivro" class="lLNotaDoLivro" >9.4</h2>
+                            </div>
+                            <div class="ferramentas">
+                                <div class="divImg">
+                                    <img id="lLimgEstrela"  class="lLimgEstrela" src="image/estrela.svg" alt="">
+                                </div>
+                                <div class="DetalhesLivro divImg">
+                                    <img class="imageEdit" src="image/setas.svg" alt="">
+                                </div>
+                                <div class="editarLivro divImg">
+                                    <img class="imageEdit" src="image/editar.svg" alt="">
+                                </div>
+                            </div>
+                        </div><!--livroLine-->
+                        <div class="dadosDoLivro">
+                            <h2 id="lLdescricao" class="lLdescricao">Nullam pretium sagittis facilisis. Integer tincidunt massa tellus, non mattis eros elementum ut. Proin ut tellus porta, lobortis purus a, vehicula odio. Mauris sed felis sed odio gravida tempor. Nullam pretium sagittis facilisis. Integer tincidunt massa tellus, non mattis eros elementum ut. Proin ut tellus porta, lobortis purus a, vehicula odio. Mauris sed felis sed odio gravida tempor.</h2>
+                        </div><!--DadosDoLivro-->
+                    </div><!--listLivros-->
+                </div><!--boxListLivros-->
             </div>
         </section><!--mainClass-->
     </main>
-    <aside class="dash">
-        <section class="container">
-
-        </section><!--container-->
-    </aside>
 </body>
 </html>
