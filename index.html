@@ -17,7 +17,7 @@
 <body>
     <aside class="box-perfil">
         <label class="switch">
-            <input class="checkbox" type="checkbox" />
+            <input id="checkTema" class="checkbox" type="checkbox" />
             <span class="slider round"></span>
           </label>
         <section class="container">
@@ -34,12 +34,12 @@
             </div><!--informacaoPessoal-->
             <div class="dadosLeitura">
                 <div class="livrosTerminados boxDados">
-                    <img src="image/codificacao.png">
+                    <img src="image/livros.svg">
                     <h2>Livros Terminados</h2>
                     <h3>100</h3>
                 </div>
                 <div class="paginasLidas boxDados">
-                    <img src="image/codificacao.png">
+                    <img src="image/paginas.svg">
                     <h2>Páginas Lidas</h2>
                     <h3>8486</h3>
                 </div>
@@ -53,15 +53,35 @@
     </aside><!--box-perfil-->
     <main>
         <section class="mainClass">
+            <div class="newLivro">
+                <span>Nome: </span>
+                <input id="inputNomeDoLivro" class="inputNomeDoLivro" type="text" placeholder="Nome...">
+                <span>Autor: </span>
+                <input id="inputAutorDoLivro" class="inputAutorDoLivro" type="text" placeholder="Autor...">
+                <span>Gênero: </span>
+                <input id="inputGeneroDoLivro" class="inputGeneroDoLivro" type="text" placeholder="Gênero...">
+                <span>Paginas: </span>
+                <input id="inputPaginaDoLivro" class="inputPaginaDoLivro" type="text" placeholder="Paginas...">
+                <span>ISBN: </span>
+                <input id="inputISBNDoLivro" class="inputISBNDoLivro" type="text" placeholder="ISBN...">
+                <span>Nota: </span>
+                <input id="inputNotaDoLivro" class="inputNotaDoLivro" type="text" placeholder="Nota...">
+                <span>Descrição: </span>
+                <textarea id="inputDescricaoDoLivro"  class="inputDescricaoDoLivro" placeholder="Descrição..."></textarea>
+                <label for="" id="btnAdicionarLivro" class="btnAdicionarLivro">Adcionar</label>
+            </div>
             <div class="livrosAndamentos">
                 <div class="tituloBox">
                     <h2>SEUS LIVROS</h2>
                 </div><!--tituloBox-->
-                <div class="boxListLivros">
+                <div class="btnAdicionarLivroDiv">
+                    <img src="image/adc-Livro.svg" alt="">
+                </div>
+                <div id="boxListLivros" class="boxListLivros">
                     <div class="listLivros">
                         <div class="livroLine">
                             <div class="divImg">
-                                <img id="lLimgLivro"  class="lLimgLivro" src="codificacao.png" alt="">
+                                <img id="lLimgLivro"  class="lLimgLivro" src="image/l-dev.svg" alt="">
                             </div>
                             <div class="dados">
                                 <h2 id="lLnomeDoLivro" class="lLnomeDoLivro">Código Limpo</h2>
@@ -75,7 +95,7 @@
                                 <div class="divImg">
                                     <img id="lLimgEstrela"  class="lLimgEstrela" src="image/estrela.svg" alt="">
                                 </div>
-                                <div class="DetalhesLivro divImg">
+                                <div class="detalhesLivro divImg">
                                     <img class="imageEdit" src="image/setas.svg" alt="">
                                 </div>
                                 <div class="editarLivro divImg">
@@ -86,12 +106,30 @@
                         <div class="dadosDoLivro">
                             <h2 id="lLdescricao" class="lLdescricao">Nullam pretium sagittis facilisis. Integer tincidunt massa tellus, non mattis eros elementum ut. Proin ut tellus porta, lobortis purus a, vehicula odio. Mauris sed felis sed odio gravida tempor. Nullam pretium sagittis facilisis. Integer tincidunt massa tellus, non mattis eros elementum ut. Proin ut tellus porta, lobortis purus a, vehicula odio. Mauris sed felis sed odio gravida tempor.</h2>
                         </div><!--DadosDoLivro-->
+                        <div class="editarLivroContainer">
+                            <span>Nome: </span>
+                            <input id="inputNomeDoLivroEditar" class="inputNomeDoLivro" type="text" placeholder="Nome...">
+                            <span>Autor: </span>
+                            <input id="inputAutorDoLivroEditar" class="inputAutorDoLivro" type="text" placeholder="Autor...">
+                            <span>Gênero: </span>
+                            <input id="inputGeneroDoLivroEditar" class="inputGeneroDoLivro" type="text" placeholder="Gênero...">
+                            <span>Paginas: </span>
+                            <input id="inputPaginaDoLivroEditar" class="inputPaginaDoLivro" type="text" placeholder="Paginas...">
+                            <span>ISBN: </span>
+                            <input id="inputISBNDoLivroEditar" class="inputISBNDoLivro" type="text" placeholder="ISBN...">
+                            <span>Nota: </span>
+                            <input id="inputNotaDoLivro" class="inputNotaDoLivro" type="text" placeholder="Nota...">
+                            <span>Descrição: </span>
+                            <textarea id="inputDescricaoDoLivroEditar"  class="inputDescricaoDoLivro" placeholder="Descrição..."></textarea>
+                            <label for="" class="btnAtualizarLivro">OK</label>
+                            <label for="" class="btnDeletarLivro">X</label>
+                        </div><!--editarLivroContainer-->
                     </div><!--listLivros-->
 
                     <div class="listLivros">
                         <div class="livroLine">
                             <div class="divImg">
-                                <img id="lLimgLivro"  class="lLimgLivro" src="codificacao.png" alt="">
+                                <img id="lLimgLivro"  class="lLimgLivro" src="image/l-aventura.svg" alt="">
                             </div>
                             <div class="dados">
                                 <h2 id="lLnomeDoLivro" class="lLnomeDoLivro">Narnia</h2>
@@ -105,7 +143,7 @@
                                 <div class="divImg">
                                     <img id="lLimgEstrela"  class="lLimgEstrela" src="image/estrela.svg" alt="">
                                 </div>
-                                <div class="DetalhesLivro divImg">
+                                <div class="detalhesLivro divImg">
                                     <img class="imageEdit" src="image/setas.svg" alt="">
                                 </div>
                                 <div class="editarLivro divImg">
@@ -116,10 +154,29 @@
                         <div class="dadosDoLivro">
                             <h2 id="lLdescricao" class="lLdescricao">Nullam pretium sagittis facilisis. Integer tincidunt massa tellus, non mattis eros elementum ut. Proin ut tellus porta, lobortis purus a, vehicula odio. Mauris sed felis sed odio gravida tempor. Nullam pretium sagittis facilisis. Integer tincidunt massa tellus, non mattis eros elementum ut. Proin ut tellus porta, lobortis purus a, vehicula odio. Mauris sed felis sed odio gravida tempor.</h2>
                         </div><!--DadosDoLivro-->
+                        <div class="editarLivroContainer">
+                            <span>Nome: </span>
+                            <input id="inputNomeDoLivroEditar" class="inputNomeDoLivro" type="text" placeholder="Nome...">
+                            <span>Autor: </span>
+                            <input id="inputAutorDoLivroEditar" class="inputAutorDoLivro" type="text" placeholder="Autor...">
+                            <span>Gênero: </span>
+                            <input id="inputGeneroDoLivroEditar" class="inputGeneroDoLivro" type="text" placeholder="Gênero...">
+                            <span>Paginas: </span>
+                            <input id="inputPaginaDoLivroEditar" class="inputPaginaDoLivro" type="text" placeholder="Paginas...">
+                            <span>ISBN: </span>
+                            <input id="inputISBNDoLivroEditar" class="inputISBNDoLivro" type="text" placeholder="ISBN...">
+                            <span>Nota: </span>
+                            <input id="inputNotaDoLivro" class="inputNotaDoLivro" type="text" placeholder="Nota...">
+                            <span>Descrição: </span>
+                            <textarea id="inputDescricaoDoLivroEditar"  class="inputDescricaoDoLivro" placeholder="Descrição..."></textarea>
+                            <label for="" class="btnAtualizarLivro">OK</label>
+                            <label for="" class="btnDeletarLivro">X</label>
+                        </div><!--editarLivroContainer-->
                     </div><!--listLivros-->
                 </div><!--boxListLivros-->
             </div>
         </section><!--mainClass-->
     </main>
 </body>
+<script src="js/main.js"></script>
 </html>
