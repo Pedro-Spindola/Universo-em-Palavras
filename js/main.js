@@ -1,5 +1,14 @@
+// Meu Array que vai simular o meu banco de dados.
+let banco = []
+
+const getBanco = () => JSON.parse(localStorage.getItem('boxListLivros')) ?? []
+const setBanco = (banco) => localStorage.setItem('boxListLivros', JSON.stringify(banco))
+
+
+
 const checkTema = document.getElementById('checkTema');
 const root = document.documentElement;
+
 
 checkTema.addEventListener("change", (event) => {
     if (event.target.checked) {
@@ -107,7 +116,6 @@ adicionarLivro.addEventListener("click", ()=>{
                 const imgLivro = document.createElement("img");
                 imgLivro.id = "lLimgLivro";
                 imgLivro.className = "lLimgLivro";
-                imgLivro.src = caminhoDoMeuLivro();
                 imgLivro.alt = "";
             
             const divDados = document.createElement("div");
@@ -124,6 +132,7 @@ adicionarLivro.addEventListener("click", ()=>{
                 h2GeneroDoLivro.id = "lLgeneroDoLivro";
                 h2GeneroDoLivro.className = "lLgeneroDoLivro";
                 h2GeneroDoLivro.textContent = inputGeneroDoLivro.value;
+                imgLivro.src = caminhoDoMeuLivro(inputGeneroDoLivro.value);
 
                 const inputAutorDoLivro = document.getElementById("inputAutorDoLivro");
                 const h2AutorDoLivro = document.createElement("h2");
@@ -168,6 +177,21 @@ adicionarLivro.addEventListener("click", ()=>{
                     imgDetalhesLivro.src = "image/setas.svg";
                     imgDetalhesLivro.alt = "";
 
+                    // Agora você precisa adicionar o evento de clique ao novo detalhesLivro
+                    divDetalhesLivro.addEventListener("click", () => {
+                        let listLivro = divDetalhesLivro.closest('.listLivros');
+                        let dadosDoLivro = listLivro.querySelector('.dadosDoLivro');
+                        let isOpen = dadosDoLivro.classList.contains('on');
+
+                        document.querySelectorAll('.dadosDoLivro').forEach(dadosDoLivro => {
+                            dadosDoLivro.classList.remove('on');
+                        });
+
+                        if (!isOpen) {
+                            dadosDoLivro.classList.add('on');
+                        }
+                    });
+
                 const divEditarLivro = document.createElement("div");
                 divEditarLivro.className = "editarLivro divImg";
 
@@ -175,6 +199,25 @@ adicionarLivro.addEventListener("click", ()=>{
                     imgEditarLivro.className = "imageEdit";
                     imgEditarLivro.src = "image/editar.svg";
                     imgEditarLivro.alt = "";
+                
+                    // Manipular o novo elemento como os outros elementos existentes
+                    divEditarLivro.addEventListener("click", () => {
+                        let listLivro = divEditarLivro.closest('.listLivros');
+                        let listEdit = listLivro.querySelector('.editarLivroContainer');
+
+                        // Verifica se os detalhes do livro estão abertos
+                        let isOpen = listEdit.classList.contains('on');
+
+                        // Fecha todos os detalhes de livros abertos
+                        document.querySelectorAll('.editarLivroContainer').forEach(listEdit => {
+                            listEdit.classList.remove('on');
+                        });
+
+                        // Se não estiverem abertos, abre os detalhes do livro clicado
+                        if (!isOpen) {
+                            listEdit.classList.add('on');
+                        }
+                    });
 
         const divDadosDoLivro = document.createElement("div");
         divDadosDoLivro.className = "dadosDoLivro";
@@ -301,8 +344,67 @@ adicionarLivro.addEventListener("click", ()=>{
             divEditarLivroContainer.appendChild(textareaDescricao);
             divEditarLivroContainer.appendChild(labelOK);
             divEditarLivroContainer.appendChild(labelX);
+
+        detalhesLivros.push(divDetalhesLivro);
 });
 
-function caminhoDoMeuLivro(){
-    return "";
+function caminhoDoMeuLivro(nome){
+    switch (nome){
+        case "Ação":
+            return "image/l-acao";
+        case "Fantasia":
+            return "image/l-infantil";
+        case "Ficção Científica":
+            return "image/l-raio";
+        case "Distopia":
+            return "image/l-mente";
+        case "Aventura":
+            return "image/l-aventura";
+        case "Ficção Policial":
+            return "image/l-acao";
+        case "Horror":
+            return "image/l-acao";
+        case "Suspense":
+            return "image/l-drama";
+        case "Romance":
+            return "image/l-roamnce";
+        case "Infantil":
+            return "image/l-infantil";
+        case "Autobiografia":
+            return "image/l-mente";
+        case "Biografia":
+            return "image/l-mente";
+        case "Gastronomia":
+            return "image/l-receitas";
+        case "Arte":
+            return "image/l-artes";
+        case "Fotografia":
+            return "image/l-artes";
+        case "Autoajuda":
+            return "image/l-psicologia";
+        case "História":
+            return "image/l-historias";
+        case "Viagem":
+            return "image/l-guia";
+        case "Crimes Reias":
+            return "image/l-acao";
+        case "Humor":
+            return "image/l-comedia";
+        case "Guias":
+            return "image/l-guia";
+        case "Religião":
+            return "image/l-religiao";
+        case "Ciências":
+            return "image/l-ciencias";
+        case "Tecnologia":
+            return "image/l-dev";
+        case "Astrologia":
+            return "image/l-astrologia";
+        case "Investimento":
+            return "image/l-investimento";
+        case "Drama":
+            return "image/l-drama";
+        case "Outros":
+            return "image/livros";
+    }
 }
